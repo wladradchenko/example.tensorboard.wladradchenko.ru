@@ -1,0 +1,17 @@
+# Model
+checkpoint_model: null  # set path to continiue train
+architecture_model: some_architecture_model
+
+# Parameters
+train: path_to_train
+test: path_to_test
+valid: path_to_valid
+
+# Classes
+classes:
+  0: "sagittarius"
+  1: "virgo"
+  2: "aries"
+  3: "cancer"
+  4: "gemini"
+  5: "scientist"

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/static/icon/logo.svg">
+    <meta name="apple-mobile-web-app-title" content="Neural Radio">
+    <title>TensorBoard</title>
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/static/icon/logo.svg">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/table.css"/>
+    <link rel="apple-touch-icon" type="image/svg+xml" sizes="any" href="/static/icon/logo.svg">
+    <link rel="shortcut icon" type="image/x-icon" sizes="any" href="/static/icon/logo.svg">
+    <link rel="mask-icon" type="image/x-icon" sizes="any" href="/static/icon/logo.svg" color="#111">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+</head>
+<body style="color: aliceblue;font-family: Ruslan Display;font-size: 12pt;">
+    <div class="content">
+        <h1 style="text-align: center;margin-top: 50pt;font-size: 40pt;color: #007bef;">ПАНЕЛЬ <text style="color: #d80f48;">ЗАПРАВЛЕНИЯ</text></h1>
+        <div class="card">
+            <div class="form-menu">
+                <div style="margin-top: 6pt;margin-bottom: 6pt;">
+                    <label for="nnSettingFile"></label>
+                    <select style="min-width: 20vw;" id="nnSettingFile" name="nnSettingFile">
+                        <option value="">Файл настройки</option>
+                    </select>
+                </div>
+                <div style="margin-top: 6pt;margin-bottom: 6pt;">
+                    <label for="nnParameterOne">Параметр 1:</label>
+                    <select id="nnParameterOne" name="nnParameterOne">
+                        <option value="true">Опция 1</option><option value="false">Опция 2</option>
+                    </select>
+                </div>
+                <div style="margin-top: 6pt;margin-bottom: 6pt;">
+                    <label for="nnParameterTwo">Параметр 2:</label>
+                    <select id="nnParameterTwo" name="nnParameterTwo">
+                        <option value="true">Опция 1</option><option value="false">Опция 2</option>
+                    </select>
+                </div>
+                <div style="margin-top: 6pt;margin-bottom: 6pt;">
+                    <label for="nnParameterThree">Еще параметр:</label>
+                    <input type="number" id="nnParameterThree" name="nnParameterThree" min="1" max="16" value="1">
+                </div>
+                <div style="margin-top: 6pt;margin-bottom: 6pt;">
+                    <button id="train-button" onclick="startTraining()">Запустить скрипт</button>
+                </div>
+            </div>
+            <div id="div-yaml-form" style="display: none;">
+              <form class="yaml-form">
+                  <textarea class="notification" style="width: 100%; height: 25%;background-color:#000000;color: aliceblue;border: none;resize: vertical;margin-top: 20pt;padding: 10pt;" id="yaml-textarea" rows="10"></textarea>
+              </form>
+            </div>
+        </div>
+        <div class="columns-content">
+            <div class="card information-train" style="min-width: 25vw;display: grid;">
+                <div id="training-message" style="display:none;"><p class="title is-4">Command processing in progress....</p></div>
+                <div style="display: flex;flex-direction: column;">
+                    <label for="eventTrainedFile"></label>
+                    <select id="eventTrainedFile" name="eventTrainedFile" class="information-train" style="margin-top: 10px;">
+                        <option value="">Выбор истории обучения модели</option>
+                    </select>
+                </div>
+                <p>Дата начала обучения: <span id="start-time"></span></p>
+                <p>Прошло времени: <span id="time-passed"></span></p>
+                <p>Времени до конца обучения: <span id="time-before-end"></span></p>
+                <p>Время одной эпохи: <span id="elapsed-time"></span></p>
+                <div>
+                    <div>
+                        Эпоха: <span id="epoch"></span> / <span id="max-epoch"></span> : <span id="max-progress"></span>
+                    </div>
+                    <div>
+                        <progress class="progress is-warning" max="100" min="0" style="width: 100%;margin-top: 20px;"></progress>
+                    </div>
+                </div>
+              </div>
+            <div class="card" style="min-width: 60vw;">
+                <canvas id="training-loss-step-chart"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <textarea name="log-train-button" class="notification" style="width: 100%; height: 50%;background-color:#050608;color: aliceblue;border: none;resize: vertical;padding: 10pt;" id="log-textarea" rows="10"></textarea>
+        </div>
+    </div>
+
+    <script defer src="/static/js/select-update-event.js" type="application/javascript"></script>
+    <script src="/static/js/draw-chart.js" type="application/javascript"></script>
+    <script src="/static/js/log-textarea.js" type="application/javascript"></script>
+    <script src="/static/js/select-update-event.js" type="application/javascript"></script>
+    <script src="/static/js/start-train.js" type="application/javascript"></script>
+    <script src="/static/js/update-information.js" type="application/javascript"></script>
+    <script src="/static/js/yaml-textarea.js" type="application/javascript"></script>
+</body>
+</html>

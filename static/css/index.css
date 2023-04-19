@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Ruslan+Display');
+
+body {
+  background-color: #000000;
+  background-image: url("/static/background/00001.png");
+  background-position: center -20vh;
+  background-size: cover;
+  background-repeat: repeat-y;
+}
+
+
+select {
+  max-width: 40ch; /* set the maximum width to 20 characters */
+  text-overflow: ellipsis; /* add an ellipsis for truncated text */
+  overflow: hidden; /* hide any overflow */
+  font-family: Ruslan Display;
+}
+
+button {
+  background: linear-gradient(to right, #007bff, #dc143c);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: Ruslan Display;
+  font-size: 12pt;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="number"] {
+  background-color: #050608;
+  color: #ffffff;
+  font-size: 12pt;
+  padding: 2pt;
+  font-family: Ruslan Display;
+  border-color: silver;
+  padding-top: 4pt;
+  border: 2px solid #ccc;
+}
+select {
+  background-color: #050608;
+  color: #ffffff;
+  font-size: 12pt;
+  padding: 2pt;
+  border-color: silver;
+  padding-top: 4pt;
+  border: 2px solid #ccc;
+}
+
+::-webkit-resizer {
+  background: #dc143c;
+}
+  textarea::-webkit-scrollbar {
+  width: 15px;
+  background: #050608;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background: linear-gradient(to bottom, #007bff, #dc143c);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 00px;
+}
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: #249de4 #f5f5f5;
+  font-size: 12pt;
+  font-family: Ruslan Display;
+}
+
+progress::-moz-progress-bar {
+  background-image: linear-gradient(to right, #dc143c, #007bff);
+}
+progress::-webkit-progress-value {
+  background-image: linear-gradient(to right, #dc143c, #007bff);
+}
+progress {
+  background-image: linear-gradient(to right, #dc143c, #007bff);
+}
+
+.card {
+  border-radius: 8px;
+  padding: 30px;
+  background-color:#000000c2;
+  box-shadow: 0px 5px 12px rgba(0,0,0,0.2);
+}
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  .form-menu {
+    display: grid;
+  }
+
+  .card {
+    margin: 30px;
+  }
+
+  .columns-content {
+    columns: 1;
+    display: initial;
+    position: relative;
+  }
+}
+/* Desktop */
+@media only screen and (min-width: 769px) {
+  .form-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card {
+    margin: 30px;
+  }
+
+  .columns-content {
+    columns: 2;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .information-train {
+    font-size: 14pt;
+  }
+}

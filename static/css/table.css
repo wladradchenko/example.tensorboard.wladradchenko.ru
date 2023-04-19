@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: linear-gradient(to bottom, #007bff2e, #1a6bcd29, transparent);
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 12pt;
+}
+
+thead {
+  background: linear-gradient(to right, #007bffc4, #1a6bcdb8);
+}
+
+th {
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  text-align: left;
+}

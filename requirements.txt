@@ -1,0 +1,4 @@
+aiohttp
+tensorboard
+python-dotenv
+PyYAML

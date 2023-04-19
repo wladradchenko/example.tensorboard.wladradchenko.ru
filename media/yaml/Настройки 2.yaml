@@ -1,0 +1,15 @@
+# Model
+checkpoint_model: some_chekpoint_model  # set path to continiue train
+architecture_model: some_architecture_model
+
+# Parameters
+train: path_to_train
+test: null
+valid: path_to_valid
+
+# Classes
+classes:
+  0: "spaghetti"
+  1: "sausage"
+  2: "fish"
+  3: "mayonnaise"
